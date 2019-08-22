@@ -20,4 +20,15 @@ server.get("/projects", (req, res) => {
   return res.json(projects);
 });
 
+// Edit Project Title
+server.put("/projects/:id", (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+
+  const index = projects.findIndex(project => project.id === id);
+  projects[index].title = title;
+
+  return res.json(projects);
+});
+
 server.listen(3000);
