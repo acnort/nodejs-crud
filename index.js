@@ -15,4 +15,9 @@ server.post("/projects", (req, res) => {
   return res.json(projects);
 });
 
+// List Projects
+server.get("/projects", (req, res) => {
+  return res.json(projects);
+});
+
 server.listen(3000);
